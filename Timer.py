@@ -3,6 +3,7 @@
 import time, datetime
 from playsound import playsound
 
+
 # Setting up the work state
 work = True
 rest = False
@@ -10,6 +11,17 @@ rest = False
 
 # Creating a function that acts as countdown
 def pomodoroCountdown(m,s):
+
+    # Opening my log system
+    file = open("/home/mohamed/Documents/Adonis Programming/PomodoroTimerProgram/WorkLog.txt", 'a')
+
+    # Getting the current task
+    task = input("Enter the task you're gonna work on during this pomodoro : ")
+    seconds = time.time()
+    local_time = time.ctime(seconds)
+    file.write(str(task) + " | Started at " + local_time + " \r")
+    file.close()
+
     #Calculating the number of seconds given
     total_seconds = m * 60 + s
 
@@ -29,7 +41,6 @@ def pomodoroCountdown(m,s):
         # Reduce 1 second
         total_seconds -= 1
     
-    #print("Changing state")
     
 # Work State
 def workState(work_state,rest_state):
@@ -42,7 +53,7 @@ def workState(work_state,rest_state):
         rest_state = True
 
     if(rest_state == True):
-        playsound('/home/mohamed/Documents/Adonis Programming/PomodoroTimerProgram/Rest.wav')
+        playsound('/home/mohamed/Documents/Adonis Programming/PomodoroTimerProgram/home/mohamed/Documents/Adonis Programming/PomodoroTimerProgram/Rest.wav')
         print("You can rest now")
         pomodoroCountdown(10, 0)
         work_state = True
@@ -51,3 +62,4 @@ def workState(work_state,rest_state):
 
 while(True):
     workState(work, rest)
+
