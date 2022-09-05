@@ -1,0 +1,2 @@
+# Pomodoro-Program
+#  Welcome to the documentation of my Pomodoro Technique timer app #  I really need a Pomodoro timer for my studies and Programming sessions #  I want It to set a timer for me for 50 minutes with a 10 minutes break between the sessions #  It will also open SPOTIFY and start playing Thomas Frank playlist #  Depending on the type of work, It will play music accordingly ( Study - Thomas Frank Playlist ), Programming ( 19th Century Music ) #
